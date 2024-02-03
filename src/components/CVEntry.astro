@@ -1,0 +1,37 @@
+---
+// interface Props {
+// 	title: string;
+// 	body: string;
+// 	href: string;
+// }
+
+const { data } = Astro.props;
+const monthNames = [
+  'January', 'February', 'March', 'April',
+  'May', 'June', 'July', 'August',
+  'September', 'October', 'November', 'December'
+];
+---
+<div class="cv-entry">
+	<h4 class="cv-position">{data.position}</h4>
+	<p class="cv-employer">{data.employer}</p>
+	<p class="cv-start-date">{monthNames[data.startDate.getMonth()]} {data.startDate.getFullYear()} &#8211; {monthNames[data.endDate.getMonth()]} {data.endDate.getFullYear()}</p>
+	<p class="cv-location">{data.location}</p>
+	<ul>
+		{data.details.map((item) => <li>{item}</li>)}
+	</ul>
+	<hr>
+</div>
+
+<style>
+
+	.cv-entry {
+		margin-bottom:40px;
+	}
+		
+	ul {
+		list-style:circle;
+	}
+
+</style>
+	

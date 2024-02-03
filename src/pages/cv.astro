@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CVEntry from "../components/CVEntry.astro"
+import { getCollection } from 'astro:content';
+
+const allEntries = await getCollection("cv");
+// console.log(allEntries);
+
+---
+<Layout title="CV">
+
+<h1>Personal Site: CV</h1>
+{allEntries.map(entry => <CVEntry data={entry.data} />)}
+    
+</Layout>
+
+
