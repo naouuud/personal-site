@@ -1,0 +1,9 @@
+Name: Tools and Technologies
+Items:
+  - Express
+  - MongoDB/Mongoose
+  - React JS
+  - Astro
+  - PostgreSQL
+  - SFML, Dear ImGui (C++)
+  - pandas (Python)

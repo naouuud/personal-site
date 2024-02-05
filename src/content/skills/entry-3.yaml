@@ -1,0 +1,8 @@
+Name: Concepts
+Items:
+  - Object-oriented programming
+  - Asynchronous programming (event loop, non-blocking calls, callback functions, ES6 promises, async/await)
+  - 'JS concepts: bind(), call() and apply(), "this" keyword, closures, factory pattern, higher order functions, currying, prototypal inheritance'
+  - Database design (star schema, fact & dimension tables)
+  - Data warehousing
+  - Use cases for CSR, SPA, SSR & SSG

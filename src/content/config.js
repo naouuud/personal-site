@@ -2,13 +2,13 @@
 import { z, defineCollection } from "astro:content";
 
 // 2. Define a `type` and `schema` for each collection
-const CVCollection = defineCollection({
+const experienceCollection = defineCollection({
   type: "data", // for MD, "data" for JSON and YAML
   schema: z.object({
     position: z.string(),
     employer: z.string(),
-    startDate: z.string().transform((str) => new Date(str)),
-    endDate: z.string().transform((str) => new Date(str)),
+    startDate: z.date(),
+    endDate: z.date(),
     location: z.string(),
     details: z.array(z.string()),
   }),
@@ -16,5 +16,5 @@ const CVCollection = defineCollection({
 
 // 3. Export a single `collections` object to register your collection(s)
 export const collections = {
-  cv: CVCollection,
+  experience: experienceCollection,
 };

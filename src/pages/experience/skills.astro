@@ -1,0 +1,23 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ExperienceNav from "../../components/ExperienceNav.astro";
+
+import { getCollection } from "astro:content";
+
+const skills = await getCollection("skills");
+// console.log(skills);
+---
+
+<Layout title="Experience"></Layout>
+
+<ExperienceNav />
+
+{skills.map((skill) => 
+    <h4>{skill.data.Name}</h4>
+    <ul>
+     {skill.data.Items.map(item => <li>{item}</li>)}
+    </ul>
+)}
+
+
+
