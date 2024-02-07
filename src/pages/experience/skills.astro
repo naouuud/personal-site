@@ -4,7 +4,7 @@ import ExperienceNav from "../../components/ExperienceNav.astro";
 
 import { getCollection } from "astro:content";
 
-const skills = await getCollection("skills");
+const allSkills = await getCollection("skills");
 // console.log(skills);
 ---
 
@@ -12,7 +12,7 @@ const skills = await getCollection("skills");
 
 <ExperienceNav />
 
-{skills.map((skill) => 
+{allSkills.map((skill) => 
     <h4>{skill.data.Name}</h4>
     <ul>
      {skill.data.Items.map(item => <li>{item}</li>)}

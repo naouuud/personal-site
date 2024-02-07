@@ -4,6 +4,7 @@ Items:
   - MongoDB/Mongoose
   - React JS
   - Astro
+  - CSS Modules, Styled Components, Tailwind CSS
   - PostgreSQL
   - SFML, Dear ImGui (C++)
   - pandas (Python)

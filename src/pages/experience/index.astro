@@ -9,11 +9,8 @@ const allEntries = await getCollection("experience");
 
 ---
 <Layout title="Experience">
-
-<ExperienceNav />
-
-{allEntries.map(entry => <CVEntry data={entry.data} />)}
-    
+    <ExperienceNav />
+    {allEntries.map(entry => <CVEntry data={entry.data} />)}
 </Layout>
 
 
