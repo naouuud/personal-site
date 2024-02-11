@@ -1,23 +1,26 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from '../../layouts/Layout.astro';
 import ExperienceNav from "../../components/ExperienceNav.astro";
-
 import { getCollection } from "astro:content";
+import ContentLayout from "../../layouts/ContentLayout.astro";
 
 const allSkills = await getCollection("skills");
 // console.log(skills);
+
 ---
 
-<Layout title="Experience"></Layout>
-
-<ExperienceNav />
-
-{allSkills.map((skill) => 
-    <h4>{skill.data.Name}</h4>
-    <ul>
-     {skill.data.Items.map(item => <li>{item}</li>)}
-    </ul>
-)}
+<Layout title="Experience">
+    <ExperienceNav />
+    <ContentLayout>
+        {allSkills.map((skill) => 
+        <div class="m-8">
+            <h4 class="text-xl mb-1">{skill.data.Name}</h4>
+            <ul class="list-disc pl-4">
+                {skill.data.Items.map(item => <li>{item}</li>)}
+            </ul>
+        </div>)}
+    </ContentLayout>
+</Layout>
 
 
 

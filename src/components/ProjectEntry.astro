@@ -1,0 +1,10 @@
+---
+const {project} = Astro.props;
+
+---
+
+<div class=" bg-neutral-200 bg-opacity-80 m-20 px-10 py-20 rounded-2xl" style="max-width: 60%;">
+    <h4 class="text-xl">{project.title}</h4>
+    <p class="italic">{project.tagline}</p>
+    <p>{project.description}</p>
+</div>

@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import CVEntry from "../../components/CVEntry.astro"
 import ExperienceNav from "../../components/ExperienceNav.astro"
 import { getCollection } from 'astro:content';
+import ContentLayout from '../../layouts/ContentLayout.astro';
 
 const allEntries = await getCollection("experience");
 // console.log(allEntries);
@@ -10,7 +11,9 @@ const allEntries = await getCollection("experience");
 ---
 <Layout title="Experience">
     <ExperienceNav />
-    {allEntries.map(entry => <CVEntry data={entry.data} />)}
+    <ContentLayout>
+        {allEntries.map(entry => <CVEntry data={entry.data} />)}
+    </ContentLayout>
 </Layout>
 
 

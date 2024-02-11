@@ -12,15 +12,16 @@ const monthNames = [
   'September', 'October', 'November', 'December'
 ];
 ---
-<div class="cv-entry">
-	<h4 class="cv-position">{data.position}</h4>
-	<p class="cv-employer">{data.employer}</p>
-	<p class="cv-start-date">{monthNames[data.startDate.getMonth()]} {data.startDate.getFullYear()} &#8211; {monthNames[data.endDate.getMonth()]} {data.endDate.getFullYear()}</p>
-	<p class="cv-location">{data.location}</p>
-	<ul>
-		{data.details.map((item) => <li>{item}</li>)}
+<div class="m-8">
+	<div class="mb-2">
+		<h4 class="text-xl">{data.position}</h4>
+		<p class="italic">{data.employer}</p>
+		<p class="italic">{monthNames[data.startDate.getMonth()]} {data.startDate.getFullYear()} &#8211; {monthNames[data.endDate.getMonth()]} {data.endDate.getFullYear()}</p>
+		<p class="italic">{data.location}</p>
+	</div>
+	<ul class="list-disc pl-4">
+		{data.details.map((item) => <li class="size-s">{item}</li>)}
 	</ul>
-	<hr>
 </div>
 
 <!-- <style>

@@ -2,7 +2,24 @@
 
 ---
 
-<nav class="flex space-x-20 justify-center bg-amber-500 text-white">
-    <a href="/experience">Timeline</a>
-    <a href="/experience/skills">Skills</a>
+<nav class="flex justify-center bg-teal-800 bg-opacity-50 text-white">
+    <a href="/experience" id="experience" class="px-4 w-28 text-center">Timeline</a>
+    <a href="/experience/skills" id="skills" class="px-4 w-28 text-center">Skills</a>
 </nav>
+
+<style>
+    .selected {
+        background-color: rgba(177, 168, 143, 0.26);
+    }
+</style>
+
+
+<script>
+    if (location.pathname == "/experience") {
+        document.getElementById("experience").classList.add("selected");
+    } 
+
+    if (location.pathname == "/experience/skills") {
+        document.getElementById("skills").classList.add("selected");
+    }
+</script>
