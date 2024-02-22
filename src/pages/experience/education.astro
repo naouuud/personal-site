@@ -1,0 +1,25 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import ContentLayout from "../../layouts/ContentLayout.astro"
+import { getCollection } from 'astro:content';
+
+const allEducation = await getCollection("education");
+const monthNames = [
+  'January', 'February', 'March', 'April',
+  'May', 'June', 'July', 'August',
+  'September', 'October', 'November', 'December'
+];
+---
+
+<Layout title="Education">
+    <ContentLayout>
+        {allEducation.map(({ data }) => 
+        <div class="m-8">
+            <h4 class="text-xl">{data.degree}</h4>
+            <h4>{data.school}</h4>
+            <h4>Graduated {monthNames[data.endDate.getMonth()]} {data.endDate.getFullYear()}</h4>
+            <h4>Achievements: {data.achievements}</h4>
+        </div>
+        )}
+    </ContentLayout>
+</Layout>

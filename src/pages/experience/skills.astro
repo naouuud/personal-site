@@ -1,8 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import ExperienceNav from "../../components/ExperienceNav.astro";
-import { getCollection } from "astro:content";
 import ContentLayout from "../../layouts/ContentLayout.astro";
+import { getCollection } from "astro:content";
 
 const allSkills = await getCollection("skills");
 // console.log(skills);
@@ -10,7 +9,6 @@ const allSkills = await getCollection("skills");
 ---
 
 <Layout title="Experience">
-    <ExperienceNav />
     <ContentLayout>
         {allSkills.map((skill) => 
         <div class="m-8">

@@ -3,8 +3,9 @@
 ---
 
 <nav class="flex justify-center bg-teal-800 bg-opacity-50 text-white">
-    <a href="/experience" id="experience" class="px-4 w-28 text-center">Timeline</a>
+    <a href="/experience" id="experience" class="px-4 w-28 text-center">Experience</a>
     <a href="/experience/skills" id="skills" class="px-4 w-28 text-center">Skills</a>
+    <a href="/experience/education" id="education" class="px-4 w-28 text-center">Education</a>
 </nav>
 
 <style>
@@ -22,4 +23,9 @@
     if (location.pathname == "/experience/skills") {
         document.getElementById("skills").classList.add("selected");
     }
+
+    if (location.pathname == "/experience/education") {
+        document.getElementById("education").classList.add("selected");
+    }
+    
 </script>
